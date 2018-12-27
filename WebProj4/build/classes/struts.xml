@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE struts PUBLIC
-"-Apache Software Foundtion//DTD Struts Configuration 2.3//EN"
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 
@@ -21,6 +21,14 @@
 <action name="LoginAction" class="com.internousdev.webproj4.action.LoginAction" method="execute">
 <result name="success">login.jsp</result>
 <result name="error">loginError.jsp</result>
+</action>
+
+<action name="InquiryAction" class="com.internousdev.webproj4.action.InquiryAction" method="execute">
+<result name="success">inquiry.jsp</result>
+</action>
+
+<action name="InquiryCompleteAction" class="com.internousdev.webproj4.action.InquiryCompleteAction" method="execute">
+<result name="success">inquiryComplete.jsp</result>
 </action>
 </package>
 </struts>
