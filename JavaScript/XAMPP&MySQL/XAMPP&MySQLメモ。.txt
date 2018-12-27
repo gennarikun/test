@@ -1,0 +1,60 @@
+
+create文でテーブルを作成。
+create tableテーブル名(
+カラム型　データ型,
+カラム型　データ型
+);
+
+
+データベース操作
+create
+read
+update テーブルに入っているデータを上書き更新
+delete テーブルに入ってるデータの削除
+
+
+insert into addresslist values
+("2","佐藤花子","xyz777","073-0000-0000","神奈川"),
+("3","田中浩史","hello888@yahoo.co.jp","045-0000-0000","静岡"),
+("4","鈴木次郎","efg123@yahoo.co.jp","080-0000-0000","沖縄"),
+("5","藤田三郎","cccc999@yahoo.co.jp","090-0000-0000","千葉");
+
+
+update addresslist set prefecture="埼玉" where user_id=1;
+
+create table fruit_stock(id int(11),fruit varchar(255),
+number int(11),price int(11),madein varchar(255));
+
+
+item_id int,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

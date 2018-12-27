@@ -1,0 +1,63 @@
+header{
+    background-color: black;
+    height:60px;
+    width: 100%;
+    color: white;
+}
+.title{
+    float: left;
+    padding: 10px 3px;
+    font-size: 28px;
+}
+
+.menu{
+    float: right;
+    
+}
+.menu li{
+    float:left;
+    padding:15px 5px 5px 20px;
+    list-style-type: none;
+}
+
+.main{
+    margin: 20px;
+    
+}
+.container1{
+    float: left;
+    height:400px;
+    width:70%;
+    background-color: skyblue;
+}
+.container2{
+    float: left;
+    height: 400px;
+    width: 30%;
+    background-color: deepskyblue
+}
+
+footer{
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    height: 60px;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    clear: left;
+    
+}
+
+footer p{
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+javascript
+
+
+while文
+var i=0;
+while(i<3){
+docment.write(i);
+i++;
+}
+
+配列
+var myoji=["田中","高橋","斉藤"];
+docment.write(myoji[1]);
+
+ooo.push(配列の末尾に追加);
+
+ooo.unshift(配列の先頭に追加);
+
+ooo.shift();配列の先頭を削除
+
+ooo.pop();配列の末尾を削除
+
+function　関数名（引数を書く）｛
+　　処理１；
+　　処理２；
+　　return；（ブラウザに表示したいことを書く）
+｝
+
+

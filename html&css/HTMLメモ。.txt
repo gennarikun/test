@@ -1,0 +1,15 @@
+CSS
+
+箇条書きの点のデザイン
+000{
+   list-style-type:***;
+   }
+
+position:absolute;
+ブラウザ左上からの絶対値。
+
+position:relative;
+もともとの位置からの絶対値。
+
+position:fixed;
+ブラウザの左上からの絶対値の固定。
