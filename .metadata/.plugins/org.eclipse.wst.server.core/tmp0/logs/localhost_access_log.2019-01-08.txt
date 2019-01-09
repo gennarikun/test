@@ -74,3 +74,7 @@
 0:0:0:0:0:0:0:1 - - [08/Jan/2019:17:28:38 +0900] "POST /templete/HomeAction;jsessionid=EA5F35192D7A139E41E719D74EF46AF6 HTTP/1.1" 200 3437
 0:0:0:0:0:0:0:1 - - [08/Jan/2019:17:29:36 +0900] "GET /templete/home.jsp HTTP/1.1" 200 1429
 0:0:0:0:0:0:0:1 - - [08/Jan/2019:17:29:47 +0900] "GET /templete/home.jsp HTTP/1.1" 200 1429
+127.0.0.1 - - [08/Jan/2019:17:40:51 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [08/Jan/2019:17:40:55 +0900] "GET /templete/login.jsp HTTP/1.1" 200 1936
+0:0:0:0:0:0:0:1 - - [08/Jan/2019:17:41:31 +0900] "GET /templete/login.jsp HTTP/1.1" 200 1936
+0:0:0:0:0:0:0:1 - - [08/Jan/2019:17:41:41 +0900] "POST /templete/LoginAction HTTP/1.1" 200 3439
