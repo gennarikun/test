@@ -103,7 +103,7 @@ table{
 						</td>
 						<td>
 							<input type="radio" name="pay" value="1" checked="checked">現金払い
-							<input type="radio" name="pay" value="2" checked="checked">クレジットカード
+							<input type="radio" name="pay" value="2">クレジットカード
 						</td>
 					</tr>
 					<tr>
