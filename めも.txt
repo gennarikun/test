@@ -1,8 +1,0 @@
-mysql -u root -p
-mysql
-show databases;
-use testdb;
-show tables;
-select*from users;
-
-sql　＆　DBConnectorでデータベース確認。

@@ -1,0 +1,11 @@
+○ECサイト○
+
+・home作成
+home.jsp(画面の構成を作成)
+
+・ログイン画面作成
+HomeAction.java(executeのあとはsuccess)
+Login.jsp
+
+・購入画面作成
+DTO(get,set)→DAO(sql)

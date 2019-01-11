@@ -1,0 +1,21 @@
+mysql -u root -p
+mysql
+show databases;
+use testdb;
+show tables;
+select*from users;
+
+cd Desktop\workspace\workspace-narasaki\test
+git add --all
+git commit -m "コメント"
+git push
+
+sql　＆　DBConnectorでデータベース確認。
+
+utilにDBConnector作成。
+
+＃表示がされない時
+jspのスペルミスはないか
+sql(DAOクラスとsqlファイル)の文が等しいか確認。
+
+

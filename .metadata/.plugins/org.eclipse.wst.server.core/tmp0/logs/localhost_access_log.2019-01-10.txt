@@ -98,3 +98,5 @@
 0:0:0:0:0:0:0:1 - - [10/Jan/2019:17:32:10 +0900] "POST /templete/LoginAction.action HTTP/1.1" 200 2558
 0:0:0:0:0:0:0:1 - - [10/Jan/2019:17:32:11 +0900] "POST /templete/BuyItemAction.action HTTP/1.1" 200 1920
 0:0:0:0:0:0:0:1 - - [10/Jan/2019:17:32:13 +0900] "POST /templete/BuyItemConfirmAction.action HTTP/1.1" 200 1383
+127.0.0.1 - - [10/Jan/2019:17:51:02 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [10/Jan/2019:17:51:04 +0900] "GET /templete/ HTTP/1.1" 200 1446
