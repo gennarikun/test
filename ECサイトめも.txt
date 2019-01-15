@@ -8,4 +8,31 @@ HomeAction.java(executeのあとはsuccess)
 Login.jsp
 
 ・購入画面作成
-DTO(get,set)→DAO(sql)
+LoginDTO(get,set)
+LoginDAO(
+・DBConnectorインスタンス化(コピー　import)
+・getConnection呼ぶ
+・sql書く
+・PreparedStatementに代入(DBまで走ってくれる箱)
+・executeQuery/executeUpdateで実行
+・結果の処理
+・con.closeで接続を切る
+)
+BuyItemDTO
+BuyItemDAO
+buyItem.jsp
+
+・ユーザー登録画面作成
+GoHomeAction.java
+UserCreateAction.java
+userCreate.jsp
+
+・ユーザー登録確認画面作成
+UserCreateConfirmAction.java(get,set)
+userCreateConfirmAction.jsp
+
+・ユーザー登録完了画面作成
+DateUtil.java
+UserCreateCompleteDAO.java
+userCreateComplete.jsp
+UserCreateCompleteAction.java

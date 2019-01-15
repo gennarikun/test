@@ -84,7 +84,7 @@ table{
 					</tr>
 					<tr>
 						<td>
-							<span>在庫</span>
+							<span>購入個数</span>
 						</td>
 						<td>
 							<select name="stock">
