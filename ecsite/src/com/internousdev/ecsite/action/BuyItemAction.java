@@ -29,16 +29,19 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 		}
 		return result;
 	}
+	
 	public int getStock(){
 		return stock;
 	}
-	public void setStock(int stock){
+	
+	public void setStrock(int stock){
 		this.stock=stock;
 	}
 	
 	public String getPay(){
 		return pay;
 	}
+	
 	public void setPay(String pay){
 		this.pay=pay;
 	}
@@ -46,7 +49,6 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 	public Map<String,Object> getSession(){
 		return session;
 	}
-	
 	@Override
 	public void setSession(Map<String,Object> session){
 		this.session=session;

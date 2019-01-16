@@ -9,6 +9,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class BuyItemConfirmAction extends ActionSupport implements SessionAware{
 	private Map<String,Object> session;
+		
 	public String execute() throws SQLException{
 		BuyItemCompleteDAO buyItemCompleteDAO=new BuyItemCompleteDAO();
 		buyItemCompleteDAO.buyItemeInfo(
@@ -25,6 +26,7 @@ public class BuyItemConfirmAction extends ActionSupport implements SessionAware{
 	public Map<String,Object> getSession(){
 		return session;
 	}
+	
 	@Override
 	public void setSession(Map<String,Object> session){
 		this.session=session;

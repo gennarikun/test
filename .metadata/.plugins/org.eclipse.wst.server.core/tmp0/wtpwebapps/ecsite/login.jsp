@@ -51,10 +51,11 @@ table{
 	clear:both;
 }
 
-#text-center{
-	display:inline-block;
- 	text-align:center; 
+#text-link{
+ 	display:inline-block;
+ 	text-align:right;
 }
+
 
 </style>
 </head>
@@ -77,7 +78,7 @@ table{
 			<br/>
 			<div id="text-link">
 				<p>新規ユーザー登録は<a href='<s:url action="UserCreateAction"/>'>こちら</a></p>
-				<p>Homeへ戻る場合は<a href='<s:url action="HomeAction"/>'>こちら</a></p>
+				<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
 			</div>
 		</div>
 	</div>
