@@ -64,8 +64,7 @@ table{
 			<p>BuyItemConfirm</p>
 		</div>
 		<div>
-			<s:form action="BuyItemConfirmAction">
-			<table>
+			<s:form>
 				<tr>
 					<td>商品名</td>
 					<td><s:property value="session.buyItem_name"/></td>
@@ -73,16 +72,11 @@ table{
 				<tr>
 					<td>値段</td>
 					<td>
-						<s:property value="session.buyItem_price"/>
-						<span>円</span>
-					</td>
+						<s:property value="session.buyItem_price"/><span>円</span></td>
 				</tr>
 				<tr>
 					<td>購入個数</td>
-					<td>
-						<s:property value="session.stock"/>
-						<span>個</span>
-					</td>
+					<td><s:property value="session.count"/><span>個</span></td>
 				</tr>
 				<tr>
 					<td>支払い方法</td>
@@ -91,12 +85,11 @@ table{
 				<tr>
 					<td><br></td>
 				</tr>
-				<tr id="submit">
+				<tr>
 					<td><input type="button" value="戻る" onClick="location.href='http://localhost:8080/ecsite/home.jsp'"/></td>
 					<td><input type="button" value="完了" onClick="location.href='http://localhost:8080/ecsite/BuyItemConfirmAction.action'"/></td>
 				</tr>
-				</table>
-				</s:form>
+			</s:form>
 		</div>	
 	</div>
 	<div id="footer">
