@@ -98,7 +98,7 @@ table{
 					<s:submit value="新規登録"/>
 			</s:form>
 			
-			<s:form action="MyPageAction">
+			<s:form action="UserListAction">
 					<s:submit value="一覧"/>
 			</s:form>
 			
@@ -106,7 +106,6 @@ table{
 				<p>ログアウトする場合は<a href='<s:url action="LogoutAction"/>'>こちら</a></p>
 			</s:if>
 		</div>
-		
 	</div>
 	<div id="footer">
 		<div id="pr">

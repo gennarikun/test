@@ -67,13 +67,13 @@ table{
 				<s:property value="errorMessage" escape="false"/>
 			</s:if>
 			<table>
-			<s:form action="UserCreateConfirmAction">
+			<s:form action="ItemCreateConfirmAction">
 				<tr>
 					<td>
 						<label></label>
 					</td>
 					<td>
-						<input type="text" name="loginUserId" value=""/>
+						<input type="text" name="itemName2" value=""/>
 					</td>
 				</tr>
 				<tr>
@@ -81,7 +81,7 @@ table{
 						<label></label>
 					</td>
 					<td>
-						<input type="text" name="loginPassword" value=""/>
+						<input type="text" name="itemName3" value=""/>
 					</td>
 				</tr>
 				<tr>
@@ -89,7 +89,7 @@ table{
 						<label></label>
 					</td>
 					<td>
-						<input type="text" name="userName" value=""/>
+						<input type="text" name="itemName" value=""/>
 					</td>
 				</tr>
 				<s:submit value="登録"/>
@@ -97,7 +97,7 @@ table{
 			</table>
 			<div>
 				<span>前画面に戻る場合は</span>
-				<a href='<s:url action="HomeAction"/>'>こちら</a>
+				<a href='<s:url action="AdminAction"/>'>こちら</a>
 			</div>
 		</div>	
 	</div>

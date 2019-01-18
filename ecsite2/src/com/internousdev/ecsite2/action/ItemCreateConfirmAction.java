@@ -26,28 +26,28 @@ public class ItemCreateConfirmAction extends ActionSupport implements SessionAwa
 		}
 		return result;
 	}
-	public String getLoginUserId(){
-		return loginUserId;
+	public String getItemName2(){
+		return itemName2;
 	}
 	
-	public void setLoginUserId(String loginUserId){
-		this.loginUserId=loginUserId;
+	public void setItemName2(String itemName2){
+		this.itemName2=itemName2;
 	}
 	
-	public String getLoginPassword(){
-		return loginPassword;
+	public String getItemName3(){
+		return itemName3;
 	}
 	
-	public void setLoginPassword(String loginPassword){
-		this.loginPassword=loginPassword;
+	public void setItemName3(String itemName3){
+		this.itemName3=itemName3;
 	}
 	
-	public String getUserName(){
-		return userName;
+	public String getItemName(){
+		return itemName;
 	}
 	
-	public void setUserName(String userName){
-		this.userName=userName;
+	public void setItemName(String itemName){
+		this.itemName=itemName;
 	}
 	
 	public Map<String,Object> getSession(){

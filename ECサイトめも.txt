@@ -1,14 +1,19 @@
 ○ECサイト○
 
+action,dao,dto,utilパッケージ作成
+web.xml struts.xml作成
+
+utilにDBConnector作成
+SQLファイル作成
+
 ・home作成
 home.jsp(画面の構成を作成)
 
 ・ログイン画面作成
 HomeAction.java(
-executeのあとはsuccess
 クリックして飛ぶページのname(struts.xmlに記入)を設定(ex:String result="oo";)
 )
-Login.jsp
+login.jsp
 
 ・購入画面作成
 LoginDTO(get,set)
@@ -24,26 +29,22 @@ LoginDAO(
 BuyItemDTO
 BuyItemDAO
 buyItem.jsp
+LoginAction.java
+GoHomeAction.java
 
 ・ユーザー登録画面作成
-GoHomeAction.java
 UserCreateAction.java
 userCreate.jsp
 
 ・ユーザー登録確認画面作成
 UserCreateConfirmAction.java(get,set)
-userCreateConfirmAction.jsp
+userCreateConfirm.jsp
 
 ・ユーザー登録完了画面作成
 DateUtil.java
 UserCreateCompleteDAO.java
 userCreateComplete.jsp
 UserCreateCompleteAction.java
-
-・購入画面作成
-BuyItemDTO.java
-BuyItemDAO.java
-buyItem.jsp
 
 ・購入確認画面作成
 BuyItemAction.java
@@ -60,3 +61,6 @@ MyPageDTO.java
 MyPageDAO.java
 MyPageAction.java
 myPage.jsp
+
+・ログアウトしてホーム画面へ戻る
+LogoutAction.java
