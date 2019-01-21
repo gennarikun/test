@@ -1,0 +1,67 @@
+package com.internousdev.ecsite2.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.internousdev.ecsite2.dto.ItemInfoDTO;
+import com.internousdev.ecsite2.util.DBConnector;
+
+public class ItemListDAO {
+
+	private DBConnector dbConnector=new DBConnector();
+	private Connection connection=dbConnector.getConnection();
+	
+		public ArrayList<ItemInfoDTO> getMyPageUserInfo(String item_Name,String item_Price,String item_Stock) throws SQLException{
+			ArrayList<ItemInfoDTO> itemInfoDTO=new ArrayList<ItemInfoDTO>();
+			
+			String sql="SELECT ubit.item_Name,iit.item_Price,ubit.item_Stock,ubit.insert_date FROM item_info_transaction ubit LEFT JOIN item_info_transaction iit ON ubit.item_transaction_id=iit.id WHERE ubit.item_Name=? AND ubit.item_Price=? AND ubit.item_Stock=? ORDER BY insert_date DESC";
+			try{
+				PreparedStatement preparedStatement=connection.prepareStatement(sql);
+				preparedStatement.setString(1,item_Name);
+				preparedStatement.setString(2,item_Price);
+				preparedStatement.setString(2,item_Stock);
+				
+				ResultSet resultSet=preparedStatement.executeQuery();
+				
+				while(resultSet.next()){
+					ItemInfoDTO dto=new ItemInfoDTO();
+					dto.setItemName(resultSet.getString("item_name"));
+					dto.setTotalPrice(resultSet.getString("total_price"));
+					dto.setTotalCount(resultSet.getString("total_count"));
+					dto.setPayment(resultSet.getString("pay"));
+					dto.setInsert_date(resultSet.getString("insert_date"));
+					itemInfoDTO.add(dto);
+				}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			connection.close();
+		}
+		return itemInfoDTO;
+		}
+		public int buyItemHistoryDelete(String item_Name,String item_Price,String item_Stock) throws SQLException{
+			
+			String sql="DELETE FROM item_info_transaction WHERE item_Name=? AND item_Price=? AND item_Stock=?";
+			PreparedStatement preparedStatement;
+			int result=0;
+			try{
+				preparedStatement=connection.prepareStatement(sql);
+				preparedStatement.setString(1,item_Name);
+				preparedStatement.setString(2,item_Price);
+				preparedStatement.setString(2,item_Stock);
+				result=preparedStatement.executeUpdate();
+			}catch(SQLException e){
+				e.printStackTrace();
+			}finally{
+				connection.close();
+			}
+			return result;
+		}
+		public ArrayList<ItemInfoDTO> getItemListUserInfo(String item_info_transaction, String login_user_transaction) {
+			// TODO 自動生成されたメソッド・スタブ
+			return null;
+		}
+}

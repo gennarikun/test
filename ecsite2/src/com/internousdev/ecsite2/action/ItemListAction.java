@@ -1,7 +1,6 @@
 package com.internousdev.ecsite2.action;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -13,39 +12,48 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class ItemListAction extends ActionSupport implements SessionAware{
 	public Map<String,Object> session;
-	private ItemListDAO itemListDAO=new ItemListDAO();
-	private ArrayList<ItemInfoDTO> itemList=new ArrayList<ItemInfoDTO>();
-	private String deleteFlg;
-	private String message;
-	
+	public String deleteFlg;
+	private String result;
 	public String execute() throws SQLException{
-		if(!session.containsKey("id")){
-			return ERROR;
-		}
+		ItemListDAO itemListDAO=new ItemListDAO();
+		ItemInfoDTO itemInfoList=new ItemInfoDTO();
+		
 		
 		if(deleteFlg==null){
-			String item_info_transaction=session.get("id").toString();
-			String login_user_transaction=session.get("login_user_id").toString();
-			itemList=itemListDAO.getItemListUserInfo(item_info_transaction,login_user_transaction);
-			}else if(deleteFlg.equals("1")){
+			String item_transaction_id=session.get("id").toString();
+			String user_master_id=session.get("login_user_id").toString();
+			ItemInfoDTO itemInfoDTO = itemListDAO.getItemListUserInfo(item_transaction_id,user_master_id);
+			
+			session.put("buyItem_name",itemInfoDTO.getItemName());
+			session.put("total_price",itemInfoDTO.getTotalPrice());
+			session.put("total_count",itemInfoDTO.getTotalStock());
+			session.put("total_payment",itemInfoDTO.getPayment());
+			session.put("message","");
+			
+		}else if(deleteFlg.equals("1")){
 				delete();
 			}
-		String result=SUCCESS;
+		result=SUCCESS;
 		return result;
 	}
 	public void delete() throws SQLException{
 		
-		String item_info_transaction=session.get("id").toString();
-		String login_user_transaction=session.get("login_user_id").toString();
+		ItemListDAO itemListDAO = new ItemListDAO();
 		
-		int res=itemListDAO.buyItemHistoryDelete(item_info_transaction,login_user_transaction);
+		String item_transaction_id=session.get("id").toString();
+		String user_master_id=session.get("login_user_id").toString();
+		
+		int res=itemListDAO.buyItemHistoryDelete(item_transaction_id,user_master_id);
 		if(res>0){
-			itemList=null;
-			setMessage("商品情報を正しく削除しました。");
+			session.put("message","商品情報を正しく削除しました。");
 		}else if(res==0){
-			setMessage("商品情報の削除に失敗しました。");
+			session.put("message","商品情報の削除に失敗しました。");
 		}
 	}
+	public String getDeleteFlg(){
+		return deleteFlg;
+	}
+	
 	public void setDeleteFlg(String deleteFlg){
 		this.deleteFlg=deleteFlg;
 	}
@@ -53,17 +61,5 @@ public class ItemListAction extends ActionSupport implements SessionAware{
 	@Override
 	public void setSession(Map<String,Object> session){
 		this.session=session;
-	}
-	
-	public ArrayList<ItemInfoDTO> getItemList(){
-		return this.itemList;
-	}
-	
-	public String getMessage(){
-		return this.message;
-	}
-	
-	public void setMessage(String message){
-		this.message=message;
 	}
 }

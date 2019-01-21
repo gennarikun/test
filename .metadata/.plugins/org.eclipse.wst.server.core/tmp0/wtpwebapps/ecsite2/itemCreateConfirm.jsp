@@ -60,7 +60,7 @@ table{
 	</div>
 	<div id="main">
 		<div id="top">
-			<p>UserCreateConfirm</p>
+			<p>ItemCreateConfirm</p>
 		</div>
 		<div>
 			<h3>登録する内容は以下でよろしいですか。</h3>
@@ -71,7 +71,7 @@ table{
 						<label></label>
 					</td>
 					<td>
-						<s:property value="itemName2" escape="false"/>
+						<s:property value="a" escape="false"/>
 					</td>
 				</tr>
 				<tr id="box">
@@ -79,7 +79,7 @@ table{
 						<label></label>
 					</td>
 					<td>
-						<s:property value="itemName3" escape="false"/>
+						<s:property value="b" escape="false"/>
 					</td>
 				</tr>
 				<tr id="box">
@@ -87,7 +87,7 @@ table{
 						<label></label>
 					</td>
 					<td>
-						<s:property value="itemName" escape="false"/>
+						<s:property value="c" escape="false"/>
 					</td>
 				</tr>
 				<tr>

@@ -7,18 +7,21 @@ import com.internousdev.ecsite2.util.DBConnector;
 import com.internousdev.ecsite2.util.DateUtil;
 
 public class ItemCreateCompleteDAO {
-	private DBConnector dbConnector=new DBConnector();
-	private Connection connection=dbConnector.getConnection();
 	private DateUtil dateUtil=new DateUtil();
 	
-	private String sql="INSERT INTO item_info_transaction(item_name2,item_name3,item_name,insert_date)VALUES(?,?,?,?)";
-	
-	public void createItem(String itemName2,String itemName3,String itemName) throws SQLException{
+	private String sql="INSERT INTO item_info_transaction(item_name,item_price,item_stock,insert_date)VALUES(?,?,?,?)";
+		
+	public void createItem(String a,String b,String c) throws SQLException{
+		
+		DBConnector dbConnector=new DBConnector();
+		
+		Connection connection=dbConnector.getConnection();
+		
 		try{
 			PreparedStatement preparedStatement=connection.prepareStatement(sql);
-			preparedStatement.setString(1, itemName2);
-			preparedStatement.setString(2, itemName3);
-			preparedStatement.setString(3, itemName);
+			preparedStatement.setString(1, a);
+			preparedStatement.setString(2, b);
+			preparedStatement.setString(3, c);
 			preparedStatement.setString(4, dateUtil.getDate());
 			
 			preparedStatement.execute();

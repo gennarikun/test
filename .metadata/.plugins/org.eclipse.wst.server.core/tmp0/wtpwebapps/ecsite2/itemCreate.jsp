@@ -60,7 +60,7 @@ table{
 	</div>
 	<div id="main">
 		<div id="top">
-			<p>itemCreate</p>
+			<p>ItemrCreate</p>
 		</div>
 		<div>
 			<s:if test="errorMessage!=''">
@@ -73,7 +73,7 @@ table{
 						<label></label>
 					</td>
 					<td>
-						<input type="text" name="itemName2" value=""/>
+						<input type="text" name="a" value=""/>
 					</td>
 				</tr>
 				<tr>
@@ -81,7 +81,7 @@ table{
 						<label></label>
 					</td>
 					<td>
-						<input type="text" name="itemName3" value=""/>
+						<input type="text" name="b" value=""/>
 					</td>
 				</tr>
 				<tr>
@@ -89,7 +89,7 @@ table{
 						<label></label>
 					</td>
 					<td>
-						<input type="text" name="itemName" value=""/>
+						<input type="text" name="c" value=""/>
 					</td>
 				</tr>
 				<s:submit value="登録"/>

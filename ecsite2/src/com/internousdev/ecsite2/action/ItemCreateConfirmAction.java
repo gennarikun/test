@@ -6,48 +6,48 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ItemCreateConfirmAction extends ActionSupport implements SessionAware{
-	private String itemName2;
-	private String itemName3;
-	private String itemName;
+	private String a;
+	private String b;
+	private String c;
 	public Map<String,Object> session;
 	private String errorMessage;
 	
 	public String execute(){
 		String result=SUCCESS;
-		if(!(itemName2.equals(""))
-			&& !(itemName3.equals(""))
-			&& !(itemName.equals(""))){
-				session.put("itemName2",itemName2);
-				session.put("itemName3",itemName3);
-				session.put("itemName",itemName);
+		if(!(a.equals(""))
+			&& !(b.equals(""))
+			&& !(c.equals(""))){
+				session.put("a",a);
+				session.put("b",b);
+				session.put("c",c);
 		}else{
 			setErrorMessage("未入力の項目があります。");
 			result=ERROR;
 		}
 		return result;
 	}
-	public String getItemName2(){
-		return itemName2;
+	public String getA(){
+		return a;
 	}
 	
-	public void setItemName2(String itemName2){
-		this.itemName2=itemName2;
+	public void setA(String a){
+		this.a=a;
 	}
 	
-	public String getItemName3(){
-		return itemName3;
+	public String getB(){
+		return b;
 	}
 	
-	public void setItemName3(String itemName3){
-		this.itemName3=itemName3;
+	public void setB(String b){
+		this.b=b;
 	}
 	
-	public String getItemName(){
-		return itemName;
+	public String getC(){
+		return c;
 	}
 	
-	public void setItemName(String itemName){
-		this.itemName=itemName;
+	public void setC(String c){
+		this.c=c;
 	}
 	
 	public Map<String,Object> getSession(){

@@ -68,15 +68,16 @@ table{
 		</div>
 		<div>
 			<s:if test="itemList==null">
-				<h3>情報はありません。</h3>
+				<h3>ご購入情報はありません。</h3>
 			</s:if>
 			<s:elseif test="message==null">
-				<h3>情報は以下になります。</h3>
+				<h3>ご購入情報は以下になります。</h3>
 				<table border="1">
 					<tr>
 						<th>商品名</th>
 						<th>値段</th>
 						<th>購入個数</th>
+						<th>支払い方法</th>
 						<th>購入日</th>
 					</tr>
 					<s:iterator value="itemList">
@@ -84,6 +85,7 @@ table{
 							<td><s:property value="itemName"/></td>
 							<td><s:property value="totalPrice"/><span>円</span></td>
 							<td><s:property value="totalCount"/><span>個</span></td>
+							<td><s:property value="payment"/></td>
 							<td><s:property value="insert_date"/></td>
 						</tr>
 					</s:iterator>

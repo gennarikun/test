@@ -77,8 +77,7 @@
 <action name="ItemListAction" class="com.internousdev.ecsite2.action.ItemListAction" method="execute">
 <result name="success">itemList.jsp</result>
 <result name="error">error.jsp</result>
-
 </action>
 
-	</package>
+</package>
 </struts>

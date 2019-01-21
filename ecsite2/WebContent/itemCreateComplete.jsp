@@ -63,7 +63,7 @@ table{
 			<p>ItemCreateComplete</p>
 		</div>
 		<div>
-			<h3>登録が完了致しました。</h3>
+			<h3>商品の登録が完了致しました。</h3>
 			<div>
 				<a href='<s:url action="AdminAction"/>'>管理者TOPへ</a>
 			</div>
