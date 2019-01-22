@@ -24,7 +24,7 @@ create table item_info_transaction(
 	item_price int,
 	item_stock int,
 	insert_date datetime,
-	updated_date datetime
+	update_date datetime
 );
 
 

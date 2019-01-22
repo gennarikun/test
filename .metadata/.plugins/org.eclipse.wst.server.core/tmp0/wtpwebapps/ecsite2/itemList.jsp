@@ -10,7 +10,7 @@
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
-<title>ItemList画面</title>
+<title>商品一覧画面</title>
 <style type="text/css">
 body{
 	margin:0;
@@ -64,43 +64,40 @@ table{
 	</div>
 	<div id="main">
 		<div id="top">
-			<p>ItemList</p>
+			<p>MyPage</p>
 		</div>
 		<div>
-			<s:if test="itemList==null">
-				<h3>ご購入情報はありません。</h3>
+			<s:if test="itemInfoDTOList==null">
+				<h3>商品情報はありません。</h3>
 			</s:if>
 			<s:elseif test="message==null">
-				<h3>ご購入情報は以下になります。</h3>
+				<h3>商品情報は以下になります。</h3>
 				<table border="1">
 					<tr>
+						<th>id</th>
 						<th>商品名</th>
 						<th>値段</th>
-						<th>購入個数</th>
-						<th>支払い方法</th>
-						<th>購入日</th>
+						<th>在庫</th>
+						<th>登録日</th>
+						<th>更新日</th>
 					</tr>
-					<s:iterator value="itemList">
+					<s:iterator value="itemInfoDTOList">
 						<tr>
+							<td><s:property value="id"/></td>
 							<td><s:property value="itemName"/></td>
-							<td><s:property value="totalPrice"/><span>円</span></td>
-							<td><s:property value="totalCount"/><span>個</span></td>
-							<td><s:property value="payment"/></td>
+							<td><s:property value="itemPrice"/><span>円</span></td>
+							<td><s:property value="itemStock"/><span>個</span></td>
 							<td><s:property value="insert_date"/></td>
+							<td><s:property value="update_date"/></td>
 						</tr>
 					</s:iterator>
 					</table>
-				<s:form action="ItemListAction">
-					<input type="hidden" name="deleteFlg" value="1">
-					<s:submit value="削除" method="delete"/>
+				<s:form action="ItemListDeleteConfirmAction">
+					<s:submit value="削除"/>
 				</s:form>
 			</s:elseif>
-			<s:if test="message !=null">
-				<h3><s:property value="message"/></h3>
-			</s:if>
 			<div id="text-right">
-				<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
-				<p>ログアウトする場合は<a href='<s:url action="LogoutAction"/>'>こちら</a></p>
+				<p>管理者TOP画面へ戻る場合は<a href='<s:url action="AdminAction"/>'>こちら</a></p>
 			</div>
 		</div>	
 	</div>

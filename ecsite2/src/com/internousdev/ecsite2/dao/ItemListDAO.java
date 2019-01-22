@@ -4,60 +4,40 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.internousdev.ecsite2.dto.ItemInfoDTO;
 import com.internousdev.ecsite2.util.DBConnector;
 
 public class ItemListDAO {
 
-	DBConnector dbConnector=new DBConnector();
-	Connection connection=dbConnector.getConnection();
+	private DBConnector dbConnector=new DBConnector();
+	private Connection connection=dbConnector.getConnection();
 	
-		public ItemInfoDTO getItemListUserInfo(String item_transaction_id,String user_master_id) throws SQLException{
-			DBConnector dbConnector=new DBConnector();
-			Connection connection=dbConnector.getConnection();
-			ItemInfoDTO itemInfoDTO=new ItemInfoDTO();
+		public List<ItemInfoDTO> getItemList() throws SQLException{
+			List<ItemInfoDTO> itemInfoDTOList=new ArrayList<ItemInfoDTO>();
+			String sql="SELECT * FROM item_info_transaction ORDER BY id";
 			
-			String sql="SELECT ubit.id,iit.item_name,ubit.total_price,ubit.total_count,ubit.pay,ubit.insert_date FROM user_buy_item_transaction ubit LEFT JOIN item_info_transaction iit ON ubit.item_transaction_id=iit.id WHERE ubit.item_transaction_id=? AND ubit.user_master_id=? ORDER BY insert_date DESC";
 			try{
 				PreparedStatement preparedStatement=connection.prepareStatement(sql);
-				preparedStatement.setString(1,item_transaction_id);
-				preparedStatement.setString(2,user_master_id);
-				
 				ResultSet resultSet=preparedStatement.executeQuery();
 				
-				if(resultSet.next()){
-					itemInfoDTO.setItemName(resultSet.getString("item_name"));
-					itemInfoDTO.setTotalPrice(resultSet.getString("total_price"));
-					itemInfoDTO.setTotalCount(resultSet.getString("total_count"));
-					itemInfoDTO.setPayment(resultSet.getString("pay"));
-				}
-					
-				
+				while(resultSet.next()){
+					ItemInfoDTO dto=new ItemInfoDTO();
+					dto.setId(resultSet.getString("id"));
+					dto.setItemName(resultSet.getString("item_name"));
+					dto.setItemPrice(resultSet.getString("item_price"));
+					dto.setItemStock(resultSet.getString("item_stock"));
+					dto.setInsert_date(resultSet.getString("insert_date"));
+					dto.setUpdate_date(resultSet.getString("update_date"));
+					itemInfoDTOList.add(dto);
+				}	
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally{
 			connection.close();
 		}
-		return itemInfoDTO;
-		}
-		public int buyItemHistoryDelete(String item_transaction_id,String user_master_id) throws SQLException{
-			DBConnector dbConnector=new DBConnector();
-			Connection connection=dbConnector.getConnection();
-			
-			String sql="DELETE FROM user_buy_item_transaction WHERE item_transaction_id=? AND user_master_id=?";
-			PreparedStatement preparedStatement;
-			int result=0;
-			try{
-				preparedStatement=connection.prepareStatement(sql);
-				preparedStatement.setString(1,item_transaction_id);
-				preparedStatement.setString(2,user_master_id);
-				result=preparedStatement.executeUpdate();
-			}catch(SQLException e){
-				e.printStackTrace();
-			}finally{
-				connection.close();
-			}
-			return result;
-		}
+		return itemInfoDTOList;
+	}
 }

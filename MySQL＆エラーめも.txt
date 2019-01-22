@@ -28,3 +28,6 @@ sql(DAOクラスとsqlファイル)の文が等しいか確認。
 
 #テーブルで全部表示されなかったとき。
 desc (テーブル名)；　でENTER押す。
+
+#Column 'oo' not found.が出てきた時
+sqlとDAOの'oo'が合っているか確認する。

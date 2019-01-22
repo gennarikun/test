@@ -1,0 +1,52 @@
+package com.internousdev.ecsite2.dto;
+
+public class ItemInfoDTO {
+	private String id;
+	private String itemName;
+	private String itemPrice;
+	private String itemStock;
+	private String insert_date;
+	
+	
+	public String getId(){
+		return id;
+	}
+	
+	public void setId(String id){
+		this.id=id;
+	}
+	
+	public String getItemName(){
+		return itemName;
+	}
+	
+	public void setItemName(String itemName){
+		this.itemName=itemName;
+	}
+	
+	public String getTotalPrice(){
+		return totalPrice;
+	}
+	
+	public void setTotalPrice(String totalPrice){
+		this.totalPrice=totalPrice;
+	}
+	
+	public String getTotalStock(){
+		return totalStock;
+	}
+	
+	public void setTotalStock(String totalStock){
+		this.totalStock=totalStock;
+	}
+	
+	public String getPayment(){
+		return payment;
+	}
+	
+	public void setPayment(String payment){
+		this.payment=payment;
+	}
+
+
+}
