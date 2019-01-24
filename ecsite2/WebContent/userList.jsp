@@ -84,9 +84,9 @@ table{
 					<s:iterator value="userInfoDTOList">
 						<tr>
 							<td><s:property value="id"/></td>
-							<td><s:property value="login_id"/></td>
-							<td><s:property value="login_pass"/></td>
-							<td><s:property value="user_name"/></td>
+							<td><s:property value="loginId"/></td>
+							<td><s:property value="loginPass"/></td>
+							<td><s:property value="userName"/></td>
 							<td><s:property value="insert_date"/></td>
 							<td><s:property value="update_date"/></td>
 						</tr>

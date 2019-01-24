@@ -10,7 +10,7 @@
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
-<title>ItemListDeleteConfirm画面</title>
+<title>削除確認画面</title>
 <style type="text/css">
 body{
 	margin:0;
@@ -61,13 +61,13 @@ table{
 	</div>
 	<div id="main">
 		<div id="top">
-			<p>ItemListDeleteConfirm</p>
+			<p>削除確認</p>
 		</div>
 		<div>
 			<s:form>
 				<h3>すべての商品を削除します。よろしいですか？</h3>
 				<tr>
-					<td><input type="button" value="ＯＫ" onClick="location.href=''"/></td>
+					<td><input type="button" value="ＯＫ" onClick="location.href='http://localhost:8080/ecsite2/itemListDeleteComplete.jsp'"/></td>
 					<td><input type="button" value="キャンセル" onClick="location.href='http://localhost:8080/ecsite2/itemList.jsp'"/></td>
 				</tr>
 			</s:form>

@@ -10,7 +10,7 @@
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
-<title>admin画面</title>
+<title>Home画面</title>
 <style type="text/css">
 body{
 	margin:0;
@@ -21,10 +21,6 @@ body{
 	font-size:12px;
 	color:#333;
 	background:#fff;
-}
-table{
-	text-align:center;
-	margin:0 auto;
 }
 
 #top{
@@ -54,17 +50,35 @@ table{
 #text-center{
 	display:inline-block;
 	text-align:center;
-	border:1px solid black;
-	padding:20px;
 }
 
-#text-center2{
-	display:inline-block;
-	text-align:center;
-	margin-left:100px;
-	border:1px solid black;
-	padding:20px;
+#item{
+	position:relative;
+	float:left;
+	width:15%;
+	margin-left:300px;
+	border:1px solid #555555;
+	padding:15px;
 }
+
+#user{
+	position:relative;
+	float:right;
+	width:15%;
+	margin-right:300px;
+	border:1px solid #555555;
+	padding:15px;
+}
+
+#titlebox{
+	position:absolute;
+	top:-20px;
+	left:80px;
+	font-size:100%;
+	padding:0.5em;
+	backgroung:#ffffff;
+}
+
 
 </style>
 </head>
@@ -75,36 +89,28 @@ table{
 	</div>
 	<div id="main">
 		<div id="top">
-			<p>管理者画面</p>
+			<p>管理者TOP画面</p>
 		</div>
-		<div id="text-center">
-		<p>商品</p>
-			<s:form action="ItemCreateAction">
-					<s:submit value="新規登録"/>
-			</s:form>
-			
-			<s:form action="ItemListAction">
-					<s:submit value="一覧"/>
-			</s:form>
-			
-			<s:if test="#session.id !=null">
-				<p>ログアウトする場合は<a href='<s:url action="LogoutAction"/>'>こちら</a></p>
-			</s:if>
-		</div>
-		
-		<div id="text-center2">
-		<p>ユーザー</p>
-			<s:form action="UserCreateAction">
-					<s:submit value="新規登録"/>
-			</s:form>
-			
-			<s:form action="UserListAction">
-					<s:submit value="一覧"/>
-			</s:form>
-			
-			<s:if test="#session.id !=null">
-				<p>ログアウトする場合は<a href='<s:url action="LogoutAction"/>'>こちら</a></p>
-			</s:if>
+		<div id="item">
+			<div id="box">
+				<div id="titlebox"><span id="title">商品</span></div>
+				<div id="text-center">
+					<s:form action="ItemListAction"><s:submit value="商品一覧"/>
+					</s:form>
+					<s:form action="ItemCreateAction"><s:submit value="商品追加"/>
+					</s:form>
+					</div>
+				</div>
+			</div>
+			<div id="user">
+				<div id="box">
+					<div id="titlebox"><span id="title">ユーザー</span></div>
+					<div id="text-center"><s:form action="UserListAction"><s:submit value="ユーザー一覧"/>
+					</s:form>
+					<s:form action="UserCreateAction"><s:submit value="ユーザー追加"/>
+					</s:form>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div id="footer">

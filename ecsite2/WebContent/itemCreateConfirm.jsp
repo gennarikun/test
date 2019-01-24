@@ -68,26 +68,26 @@ table{
 			<s:form action="ItemCreateCompleteAction">
 				<tr id="box">
 					<td>
-						<label></label>
+						<label>商品名:</label>
 					</td>
 					<td>
-						<s:property value="a" escape="false"/>
-					</td>
-				</tr>
-				<tr id="box">
-					<td>
-						<label></label>
-					</td>
-					<td>
-						<s:property value="b" escape="false"/>
+						<s:property value="itemName" escape="false"/>
 					</td>
 				</tr>
 				<tr id="box">
 					<td>
-						<label></label>
+						<label>値段:</label>
 					</td>
 					<td>
-						<s:property value="c" escape="false"/>
+						<s:property value="itemPrice" escape="false"/>
+					</td>
+				</tr>
+				<tr id="box">
+					<td>
+						<label>在庫:</label>
+					</td>
+					<td>
+						<s:property value="itemStock" escape="false"/>
 					</td>
 				</tr>
 				<tr>

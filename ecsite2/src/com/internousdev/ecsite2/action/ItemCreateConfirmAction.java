@@ -6,61 +6,68 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ItemCreateConfirmAction extends ActionSupport implements SessionAware{
-	private String a;
-	private String b;
-	private String c;
+	private String itemName;
+	private String itemPrice;
+	private String itemStock;
 	public Map<String,Object> session;
-	private String errorMessage;
-	
+	private String errorMassage;
 	public String execute(){
 		String result=SUCCESS;
-		if(!(a.equals(""))
-			&& !(b.equals(""))
-			&& !(c.equals(""))){
-				session.put("a",a);
-				session.put("b",b);
-				session.put("c",c);
+		if(!(itemName.equals(""))
+			&& !(itemPrice.equals(""))
+			&& !(itemStock.equals(""))){
+				session.put("itemName",itemName);
+				session.put("itemPrice",itemPrice);
+				session.put("itemStock",itemStock);
+		try{
+			Integer.parseInt(itemPrice);
+			Integer.parseInt(itemStock);
+		}catch (NumberFormatException e){
+			setErrorMassage("値段または在庫に数値以外が入力されています");
+			result=ERROR;
+			}
 		}else{
-			setErrorMessage("未入力の項目があります。");
+			setErrorMassage("未入力の項目があります。");
 			result=ERROR;
 		}
 		return result;
 	}
-	public String getA(){
-		return a;
+	public String getItemName(){
+		return itemName;
 	}
 	
-	public void setA(String a){
-		this.a=a;
+	public String getItemPrice(){
+		return itemPrice;
 	}
 	
-	public String getB(){
-		return b;
-	}
-	
-	public void setB(String b){
-		this.b=b;
-	}
-	
-	public String getC(){
-		return c;
-	}
-	
-	public void setC(String c){
-		this.c=c;
+	public String getItemStock(){
+		return itemStock;
 	}
 	
 	public Map<String,Object> getSession(){
 		return session;
 	}
+	
+	public String getErrorMassage(){
+		return errorMassage;
+	}
+	
+	public void setItemName(String itemName){
+		this.itemName=itemName;
+	}
+	
+	public void setItemPrice(String itemPrice){
+		this.itemPrice=itemPrice;
+	}
+	
+	public void setItemStock(String itemStock){
+		this.itemStock=itemStock;
+	}
 	@Override
-	public void setSession(Map<String,Object> session){
+	public void setSession(Map<String,Object>session){
 		this.session=session;
 	}
-	public String getErrorMessege(){
-		return errorMessage;
-	}
-	public void setErrorMessage(String errorMessage){
-		this.errorMessage=errorMessage;
+	public void setErrorMassage(String errorMassage){
+		this.errorMassage=errorMassage;
 	}
 }
