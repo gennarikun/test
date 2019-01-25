@@ -68,19 +68,37 @@ table{
 		<div id="top">
 			<p>Login</p>
 		</div>
-		<div>
-			<h3>商品を購入する際にはログインをお願いします。</h3>
-			<s:form action="LoginAction">
-					<s:textfield name="loginUserId"/>
-					<s:password name="loginPassword"/>			
-					<s:submit value="ログイン"/>
-			</s:form>
-			<br/>
-			<div id="text-link">
+<!-- 		<div> -->
+<!-- 			<h3>商品を購入する際にはログインをお願いします。</h3> -->
+<%-- 			<s:form action="LoginAction"> --%>
+<%-- 					<s:textfield name="loginUserId"/> --%>
+<%-- 					<s:password name="loginPassword"/>			 --%>
+<%-- 					<s:submit value="ログイン"/> --%>
+<%-- 			</s:form> --%>
+<!-- 			<br/> -->
+<!-- 			<div id="text-link"> -->
+<%-- 				<p>新規ユーザー登録は<a href='<s:url action="UserCreateAction"/>'>こちら</a></p> --%>
+<%-- 				<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p> --%>
+<!-- 			</div> -->
+<!-- 		</div> -->
+
+<div class="loginbox">
+			<h1>Login Here</h1>
+			<form action="LoginAction">
+
+					<p>Username</p>
+					<input type="text" name="loginUserId" placeholder="Enter Username">
+					<p>Password</p>
+					<input type="password" name="loginPassword" placeholder="Enter Password">		
+					<input type="submit" name="" value="Login">
+
+			<div class="loginbox2">
 				<p>新規ユーザー登録は<a href='<s:url action="UserCreateAction"/>'>こちら</a></p>
 				<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
+					</div>
+				</form>
 			</div>
-		</div>
+
 	</div>
 	<div id="footer">
 		<div id="pr">

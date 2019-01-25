@@ -27,6 +27,26 @@ table{
 	margin:0 auto;
 }
 
+.loginbox input[type="submit"]
+{
+	border:none;
+	outline:none;
+	height:40px;
+	background:#fb2525;
+	color:#fff;
+	font-size:18px;
+	border-radius:20px;
+}
+
+
+.loginbox input[type="submit"]:hover
+{
+	cursor:pointer;
+	background:#ffc107;
+	color:#000;
+}
+
+
 #top{
 	width:780px;
 	margin:30px auto;
@@ -67,15 +87,16 @@ table{
 		<div id="top">
 			<p>Home</p>
 		</div>
+		<div class="loginbox">
 		<div id="text-center">
 			<s:form action="HomeAction">
-					<s:submit value="商品購入"/>
+					<input type="submit" value="商品購入">
 			</s:form>
 			
 			<s:form action="AdminAction">
-					<s:submit value="管理者"/>
+					<input type="submit" value="管理者">
 			</s:form>
-			
+		</div>
 			<s:if test="#session.id !=null">
 				<p>ログアウトする場合は<a href='<s:url action="LogoutAction"/>'>こちら</a></p>
 			</s:if>

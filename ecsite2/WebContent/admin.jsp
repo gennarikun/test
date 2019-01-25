@@ -10,7 +10,7 @@
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
-<title>Home画面</title>
+<title>admin画面</title>
 <style type="text/css">
 body{
 	margin:0;
@@ -23,10 +23,30 @@ body{
 	background:#fff;
 }
 
+.loginbox input[type=submit]
+{
+	border:none;
+	outline:none;
+	height:40px;
+	background:#fb2525;
+	color:#fff;
+	font-size:18px;
+	border-radius:20px;
+}
+
+.loginbox input[type="submit"]:hover
+{
+	cursor:pointer;
+	background:#ffc107;
+	color:#000;
+}
+
 #top{
-	width:780px;
+	width:100%;
 	margin:30px auto;
-	border:1px solid #333;
+	background: #333;
+	color:#fff;
+	text-align:center;
 }
 
 #header{
@@ -36,10 +56,11 @@ body{
 }
 
 #main{
-	width:100%;
+	width:;
 	height:500px;
-	text-align:center;
+
 }
+
 #footer{
 	width:100%;
 	height:80px;
@@ -47,38 +68,34 @@ body{
 	clear:both;
 }
 
-#text-center{
-	display:inline-block;
-	text-align:center;
-}
-
-#item{
-	position:relative;
+.box{
 	float:left;
-	width:15%;
-	margin-left:300px;
-	border:1px solid #555555;
-	padding:15px;
+	margin-left:500px;
+	text-align:center;
+	background:black;
+	padding:20px;
+	color:#fff;
 }
 
-#user{
-	position:relative;
+.box2{
 	float:right;
-	width:15%;
-	margin-right:300px;
-	border:1px solid #555555;
-	padding:15px;
+	margin-right:500px;
+	text-align:center;
+	background:black;
+	padding:20px;
+	color:#fff;
 }
 
-#titlebox{
-	position:absolute;
-	top:-20px;
-	left:80px;
-	font-size:100%;
-	padding:0.5em;
-	backgroung:#ffffff;
+.logout p{
+	text-align:center;
+	font-size:12px;
+	line-height:20px;
+	color:gray;
 }
 
+.logout p:hover{
+	color:#ffc107;
+}
 
 </style>
 </head>
@@ -89,29 +106,35 @@ body{
 	</div>
 	<div id="main">
 		<div id="top">
-			<p>管理者TOP画面</p>
+			<h1>管理者画面</h1>
 		</div>
-		<div id="item">
-			<div id="box">
-				<div id="titlebox"><span id="title">商品</span></div>
-				<div id="text-center">
-					<s:form action="ItemListAction"><s:submit value="商品一覧"/>
-					</s:form>
-					<s:form action="ItemCreateAction"><s:submit value="商品追加"/>
-					</s:form>
-					</div>
-				</div>
-			</div>
-			<div id="user">
-				<div id="box">
-					<div id="titlebox"><span id="title">ユーザー</span></div>
-					<div id="text-center"><s:form action="UserListAction"><s:submit value="ユーザー一覧"/>
-					</s:form>
-					<s:form action="UserCreateAction"><s:submit value="ユーザー追加"/>
-					</s:form>
-				</div>
-			</div>
+		 <div class="loginbox">
+		<div class="box">
+		 <p>商品</p>
+			<s:form action="ItemCreateAction">
+					<input type="submit" value="新規登録">
+			</s:form>
+			
+			<s:form action="ItemListAction">
+					<input type="submit" value="一覧">
+			</s:form>
 		</div>
+		<div class="box2">
+		 <p>ユーザー</p>
+			<s:form action="UserCreateAction">
+					<input type="submit" value="新規登録">
+			</s:form>
+			
+			<s:form action="UserListAction">
+					<input type="submit" value="一覧">
+			</s:form>
+			</div>
+		</div>	
+	</div>
+	<div class="logout">
+		<s:if test="#session.id !=null">
+				<p>ログアウトする場合は<a href='<s:url action="LogoutAction"/>'>こちら</a></p>
+			</s:if>
 	</div>
 	<div id="footer">
 		<div id="pr">

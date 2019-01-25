@@ -1,0 +1,122 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib prefix="s" uri="/struts-tags"%>
+<!DOCTYPE htm>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="Content-Style-Type" content="text/css"/>
+<meta http-equiv="Content-Script-Type" content="text/javascript"/>
+<meta http-equiv="imagetoolbar" content="no"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<title>admin画面</title>
+<style type="text/css">
+body{
+	margin:0;
+	padding:0;
+	line-height:1.6;
+	letter-spacing;1px;
+	font-family:Verdana,Helvetica,sans-serif;
+	font-size:12px;
+	color:#333;
+	background:#fff;
+}
+
+.loginbox input[type=submit]
+{
+	border:none;
+	outline:none;
+	height:40px;
+	background:#fb2525;
+	color:#fff;
+	font-size:18px;
+	border-radius:20px;
+}
+
+.loginbox input[type="submit"]:hover
+{
+	cursor:pointer;
+	background:#ffc107;
+	color:#000;
+}
+
+#top{
+	width:100%;
+	margin:30px auto;
+	background: #333;
+	color:#fff;
+}
+
+#header{
+	width:100%;
+	height:80px;
+	background-color:black;
+}
+
+#main{
+	width:;
+	height:500px;
+}
+
+#footer{
+	width:100%;
+	height:80px;
+	background-color:black;
+	clear:both;
+}
+
+.box{
+	float:left;
+	margin-left:200px;
+}
+
+.box2{
+	float:left
+	margin-left:200px;
+}
+
+</style>
+</head>
+<body>
+	<div id="header">
+		<div id="pr">
+		</div>
+	</div>
+	<div id="main">
+		<div id="top">
+			<p>管理者画面</p>
+		</div>
+		 <div class="loginbox">
+		<div class="box">
+		 <p>商品</p>
+			<s:form action="ItemCreateAction">
+					<input type="submit" value="新規登録">
+			</s:form>
+			
+			<s:form action="ItemListAction">
+					<input type="submit" value="一覧">
+			</s:form>
+		</div>
+		<div class="box2">
+		 <p>ユーザー</p>
+			<s:form action="UserCreateAction">
+					<input type="submit" value="新規登録">
+			</s:form>
+			
+			<s:form action="UserListAction">
+					<input type="submit" value="一覧">
+			</s:form>
+			</div>
+		</div>	
+	</div>
+		<s:if test="#session.id !=null">
+				<p>ログアウトする場合は<a href='<s:url action="LogoutAction"/>'>こちら</a></p>
+			</s:if>
+	
+	<div id="footer">
+		<div id="pr">
+		</div>
+	</div>
+</body>
+</html>

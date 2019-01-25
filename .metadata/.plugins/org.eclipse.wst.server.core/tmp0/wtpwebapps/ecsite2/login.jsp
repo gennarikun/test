@@ -17,15 +17,82 @@ body{
 	padding:0;
 	line-height:1.6;
 	letter-spacing;1px;
-	font-family:Verdana,Helvetica,sans-serif;
+	font-family:sans-serif;
 	font-size:12px;
 	color:#333;
-	background:#fff;
+	background:url(photo.jpg);
 }
-table{
+
+.loginbox{
+	width:320px;
+	height:400px;
+	background:#000;
+	color:#fff;
+	top:380px;
+	left:50%;
+ 	position:absolute; 
+ 	transform:translate(-50%,-50%); 
+	box-sizing:border-box;
+	padding:70px 30px;
+	}
+
+h1{
+	margin:0;
+	padding:0;
 	text-align:center;
-	margin:0 auto;
+	font-size:22px;
 }
+
+.loginbox p{
+	margin:0;
+	padding:0;
+	font-weight:bold;
+}
+
+.loginbox input{
+	width:100%;
+	margin-bottom:20px;
+}
+.loginbox input[type="text"],input[type="password"]
+{
+	border:none;
+	border-bottom:1px solid #fff;
+	background:transparent;
+	outline:none;
+	height:40px;
+	color:#fff;
+	font-size:16px;
+}
+
+.loginbox input[type="submit"]
+{
+	border:none;
+	outline:none;
+	height:40px;
+	background:#fb2525;
+	color:#fff;
+	fontsize:18px;
+	border-radius:20px;
+}
+
+.loginbox input[type="submit"]:hover
+{
+	cursor:pointer;
+	background:#ffc107;
+	color:#000;
+}
+
+.loginbox2 p{
+	text-decoration:none;
+	font-size:12px;
+	line-height:20px;
+	color:darkgray;
+}
+
+.loginbox2 p:hover{
+	color:#ffc107;
+}
+
 
 #top{
 	width:780px;
@@ -51,10 +118,6 @@ table{
 	clear:both;
 }
 
-#text-link{
- 	display:inline-block;
- 	text-align:right;
-}
 
 
 </style>
@@ -69,19 +132,25 @@ table{
 			<p>Login</p>
 		</div>
 		<div>
-			<h3>商品を購入する際にはログインをお願いします。</h3>
-			<s:form action="LoginAction">
-					<s:textfield name="loginUserId"/>
-					<s:password name="loginPassword"/>			
-					<s:submit value="ログイン"/>
-			</s:form>
-			<br/>
-			<div id="text-link">
+		<div class="loginbox">
+		<img src="icon.png" class="avatar">
+			<h1>Login Here</h1>
+			<form action="LoginAction">
+					<p>Username</p>
+					<input type="text" name="loginUserId" placeholder="Enter Username">
+					<p>Password</p>
+					<input type="password" name="loginPassword" placeholder="Enter Password">		
+					<input type="submit" name="" value="Login">
+
+			<div class="loginbox2">
 				<p>新規ユーザー登録は<a href='<s:url action="UserCreateAction"/>'>こちら</a></p>
 				<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
+					</div>
+				</form>
+			</div>
 			</div>
 		</div>
-	</div>
+
 	<div id="footer">
 		<div id="pr">
 		</div>
