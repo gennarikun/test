@@ -1,0 +1,31 @@
+package com.internousdev.ecsite2.action;
+import java.sql.SQLException;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.ecsite2.dao.InquiryCompleteDAO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class InquiryConfirmAction extends ActionSupport implements SessionAware{
+	private Map<String,Object> session;
+		
+	public String execute() throws SQLException{
+		InquiryCompleteDAO inquiryCompleteDAO=new InquiryCompleteDAO();
+		inquiryCompleteDAO.insert(
+				session.get("name").toString(),
+				session.get("qtype").toString(),
+				session.get("body").toString());
+		String result=SUCCESS;
+		return result;
+	}
+	
+	public Map<String,Object> getSession(){
+		return session;
+	}
+	
+	@Override
+	public void setSession(Map<String,Object> session){
+		this.session=session;
+	}
+}

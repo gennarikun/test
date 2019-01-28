@@ -7,6 +7,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class UserListDeleteCompleteAction extends ActionSupport {
 	private String message;
+
 	public String execute() throws SQLException {
 		String result = ERROR;
 		UserListDeleteCompleteDAO userListDeleteCompleteDAO = new UserListDeleteCompleteDAO();
@@ -19,6 +20,7 @@ public class UserListDeleteCompleteAction extends ActionSupport {
 		result = SUCCESS;
 		return result;
 	}
+	
 	
 	public String getMessage() {
 		return message;

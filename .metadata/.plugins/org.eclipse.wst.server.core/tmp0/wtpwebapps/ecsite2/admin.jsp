@@ -24,14 +24,14 @@ body{
 }
 
 .loginbox input[type=submit]
-{
+{	width:200px;
 	border:none;
 	outline:none;
 	height:40px;
 	background:#fb2525;
 	color:#fff;
 	font-size:18px;
-	border-radius:20px;
+	border-radius:10px;
 }
 
 .loginbox input[type="submit"]:hover
@@ -68,28 +68,44 @@ body{
 	clear:both;
 }
 
+.loginbox{
+	width:600px;
+	background:gray;
+	height:200px;
+	position:relative;
+	margin:0 auto;
+}
+
+
+
 .box{
-	float:left;
-	margin-left:500px;
-	text-align:center;
-	background:black;
-	padding:20px;
+	position:absolute;
+	top:0;
+	left:0;
+	padding:10px;
 	color:#fff;
+	box-sizing:border-box;
+	text-align:center;
+	width:300px;
 }
 
 .box2{
-	float:right;
-	margin-right:500px;
-	text-align:center;
-	background:black;
-	padding:20px;
+	position:absolute;
+	top:0;
+	right:0;
+	padding:10px;
 	color:#fff;
+	box-sizing:border-box;
+	text-align:center;
+	width:300px;
 }
 
 .logout p{
 	text-align:center;
 	font-size:12px;
-	line-height:20px;
+	position:absolute;
+	top:60%;
+	right:45%;
 	color:gray;
 }
 
@@ -106,35 +122,36 @@ body{
 	</div>
 	<div id="main">
 		<div id="top">
-			<h1>管理者画面</h1>
+			<h1>ADMIN</h1>
 		</div>
 		 <div class="loginbox">
 		<div class="box">
-		 <p>商品</p>
+		 <h1>PRODUCT</h1>
 			<s:form action="ItemCreateAction">
-					<input type="submit" value="新規登録">
+					<input type="submit" value="New Create">
 			</s:form>
 			
 			<s:form action="ItemListAction">
-					<input type="submit" value="一覧">
+					<input type="submit" value="Product List">
 			</s:form>
 		</div>
 		<div class="box2">
-		 <p>ユーザー</p>
+		 <h1>USER</h1>
 			<s:form action="UserCreateAction">
-					<input type="submit" value="新規登録">
+					<input type="submit" value="New Create">
 			</s:form>
 			
 			<s:form action="UserListAction">
-					<input type="submit" value="一覧">
+					<input type="submit" value="User List">
 			</s:form>
 			</div>
 		</div>	
 	</div>
 	<div class="logout">
-		<s:if test="#session.id !=null">
+	
+<%-- 		<s:if test="#session.id !=null"> --%>
 				<p>ログアウトする場合は<a href='<s:url action="LogoutAction"/>'>こちら</a></p>
-			</s:if>
+<%-- 			</s:if> --%>
 	</div>
 	<div id="footer">
 		<div id="pr">

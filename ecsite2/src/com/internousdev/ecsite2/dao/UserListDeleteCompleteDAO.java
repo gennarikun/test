@@ -9,8 +9,9 @@ import com.internousdev.ecsite2.util.DBConnector;
 public class UserListDeleteCompleteDAO {
 	private DBConnector dbConnector=new DBConnector();
 	private Connection connection=dbConnector.getConnection();
-	
+
 	public int deleteUserList() throws SQLException{
+		
 		String sql="DELETE FROM login_user_transaction";
 		PreparedStatement preparedStatement;
 		int result=0;

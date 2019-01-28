@@ -23,27 +23,7 @@ body{
 	background:#fff;
 }
 table{
-	text-align:center;
 	margin:0 auto;
-}
-
-.loginbox input[type="submit"]
-{
-	border:none;
-	outline:none;
-	height:40px;
-	background:#fb2525;
-	color:#fff;
-	font-size:18px;
-	border-radius:20px;
-}
-
-
-.loginbox input[type="submit"]:hover
-{
-	cursor:pointer;
-	background:#ffc107;
-	color:#000;
 }
 
 
@@ -71,10 +51,53 @@ table{
 	clear:both;
 }
 
-#text-center{
-	display:inline-block;
-	text-align:center;
+
+
+.loginbox{
+	width:400px;
+	height:200px;
+	position:relative;
+	margin:0 auto;
 }
+
+.btn{
+	border:1px solid black;
+	padding:10px 30px;
+	color:black;
+	margin-right:5px;
+	font-size:13px;
+	text-decoration:none;
+	font-family:sans-serif;
+}
+
+.btn-one{
+	background-color:darkorange;
+	position:absolute;
+	top:0;
+	left:0;
+}
+.btn-two{
+	position:absolute;
+	top:0;
+	right:0;
+}
+.btn-two:hover{
+	background-color:darkorange;
+	transition:all 0.5s ease-in;
+}
+
+.btn-three{
+	position:absolute;
+	top:100px;
+	left:36%;
+}
+
+.btn-three:hover{
+	background-color:black;
+	transition:all 0.5s ease-in;
+	color:white;
+}
+
 
 </style>
 </head>
@@ -87,20 +110,23 @@ table{
 		<div id="top">
 			<p>Home</p>
 		</div>
-		<div class="loginbox">
-		<div id="text-center">
+	<div class="loginbox">
 			<s:form action="HomeAction">
-					<input type="submit" value="商品購入">
+					<a href="http://localhost:8080/ecsite2/HomeAction.action" class="btn btn-one">Buy</a>
 			</s:form>
 			
 			<s:form action="AdminAction">
-					<input type="submit" value="管理者">
+					<a href="http://localhost:8080/ecsite2/admin.jsp" class="btn btn-two">Admin</a>
 			</s:form>
-		</div>
+			
+			<s:form action="InquiryAction">
+					<a href="http://localhost:8080/ecsite2/inquiry.jsp" class="btn btn-three">Contact</a>
+			</s:form>
+			
+	</div>
 			<s:if test="#session.id !=null">
 				<p>ログアウトする場合は<a href='<s:url action="LogoutAction"/>'>こちら</a></p>
 			</s:if>
-		</div>
 	</div>
 	<div id="footer">
 		<div id="pr">
