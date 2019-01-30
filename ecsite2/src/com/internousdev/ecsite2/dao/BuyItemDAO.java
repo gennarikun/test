@@ -7,12 +7,12 @@ import com.internousdev.ecsite2.dto.BuyItemDTO;
 import com.internousdev.ecsite2.util.DBConnector;
 
 public class BuyItemDAO {
+	private DBConnector dbConnector = new DBConnector();
+	private Connection connection = dbConnector.getConnection();
+	private BuyItemDTO buyItemDTO = new BuyItemDTO();
 	
 	public BuyItemDTO getBuyItemInfo(){
-		DBConnector dbConnector=new DBConnector();
-		Connection connection=dbConnector.getConnection();
-		BuyItemDTO buyItemDTO=new BuyItemDTO();
-	
+		
 		String sql="SELECT id,item_name,item_price FROM item_info_transaction";
 	
 		
@@ -28,6 +28,9 @@ public class BuyItemDAO {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		return buyItemDTO;
+	}
+	public BuyItemDTO getBuyItemDTO(){
 		return buyItemDTO;
 	}
 	

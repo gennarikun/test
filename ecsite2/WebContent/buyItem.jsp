@@ -16,7 +16,7 @@ body{
 	margin:0;
 	padding:0;
 	line-height:1.6;
-	letter-spacing;1px;
+	letter-spacing:1px;
 	font-family:Verdana,Helvetica,sans-serif;
 	font-size:12px;
 	color:#333;
@@ -70,7 +70,7 @@ table{
 							<span>商品名</span>
 						</td>
 						<td>
-							<s:property value="session.buyItem_name"/>
+							<s:property value="session.buyItem_name"/><br/>
 						</td>
 					</tr>
 					<tr>

@@ -20,13 +20,24 @@ body{
 	font-family:sans-serif;
 	font-size:12px;
 	color:#333;
-	background:url(photo.jpg);
+ 	background-image:url(img/photo.jpg);
+ 	background-size:cover;
+ 	background-position:center;
+}
+
+.avatar{
+	width:100px;
+	height:100px;
+	border-radius:;
+	position:absolute;
+	top:-10%;
+	left:calc(50% - 50px);
 }
 
 .loginbox{
 	width:320px;
 	height:400px;
-	background:#000;
+	background:gray;
 	color:#fff;
 	top:380px;
 	left:50%;
@@ -89,33 +100,23 @@ h1{
 	color:darkgray;
 }
 
-.loginbox2 p:hover{
+.loginbox2 a:hover{
 	color:#ffc107;
 }
 
 
 #top{
-	width:780px;
-	margin:30px auto;
-	border:1px solid #333;
 }
 
 #header{
-	width:100%;
-	height:80px;
-	background-color:black;
+	
 }
 
 #main{
-	width:100%;
-	height:500px;
 	text-align:center;
 }
 #footer{
-	width:100%;
-	height:80px;
-	background-color:black;
-	clear:both;
+	
 }
 
 
@@ -129,13 +130,13 @@ h1{
 	</div>
 	<div id="main">
 		<div id="top">
-			<p>Login</p>
+		
 		</div>
 		<div>
 		<div class="loginbox">
-		<img src="icon.png" class="avatar">
+		<img src="img/icon.png" class="avatar">
 			<h1>Login Here</h1>
-			<form action="LoginAction">
+			<s:form action="LoginAction">
 					<p>Username</p>
 					<input type="text" name="loginUserId" placeholder="Enter Username">
 					<p>Password</p>
@@ -146,7 +147,7 @@ h1{
 				<p>新規ユーザー登録は<a href='<s:url action="UserCreateAction"/>'>こちら</a></p>
 				<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
 					</div>
-				</form>
+				</s:form>
 			</div>
 			</div>
 		</div>

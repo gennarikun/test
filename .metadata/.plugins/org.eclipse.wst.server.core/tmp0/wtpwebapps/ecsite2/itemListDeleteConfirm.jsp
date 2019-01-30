@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta http-equiv="Content-Style-Type" content="text/css"/>
 <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -53,6 +54,13 @@ table{
 
 
 </style>
+<script type="text/javascript">
+	function submitAction(url){
+		$('form').attr('action',url);
+		$('form').submit();
+	}
+
+</script>
 </head>
 <body>
 	<div id="header">
@@ -67,8 +75,8 @@ table{
 			<s:form>
 				<h3>すべての商品を削除します。よろしいですか？</h3>
 				<tr>
-					<td><input type="button" value="ＯＫ" onClick="location.href='http://localhost:8080/ecsite2/itemListDeleteComplete.jsp'"/></td>
-					<td><input type="button" value="キャンセル" onClick="location.href='http://localhost:8080/ecsite2/itemList.jsp'"/></td>
+					<td><input type="button" value="ＯＫ" onClick="submitAction('ItemListDeleteCompleteAction')"/></td>
+					<td><input type="button" value="キャンセル" onClick="submitAction('ItemListAction')"/></td>
 				</tr>
 			</s:form>
 		</div>	

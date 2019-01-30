@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta http-equiv="Content-Style-Type" content="text/css"/>
 <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <meta http-equiv="imagetoolbar" content="no"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -53,6 +54,12 @@ table{
 
 
 </style>
+<script type="text/javascript">
+	function submitAction(url){
+		$('form').attr('action',url);
+		$('form').submit();
+	}
+</script>
 </head>
 <body>
 	<div id="header">
@@ -72,7 +79,7 @@ table{
 				<tr>
 					<td>値段</td>
 					<td>
-						<s:property value="session.buyItem_price"/><span>円</span></td>
+						<s:property value="session.total_price"/><span>円</span></td>
 				</tr>
 				<tr>
 					<td>購入個数</td>
@@ -86,8 +93,8 @@ table{
 					<td><br></td>
 				</tr>
 				<tr>
-					<td><input type="button" value="戻る" onClick="location.href='http://localhost:8080/ecsite2/home.jsp'"/></td>
-					<td><input type="button" value="完了" onClick="location.href='http://localhost:8080/ecsite2/BuyItemConfirmAction.action'"/></td>
+					<td><input type="button" value="戻る" onClick="submitAction('HomeAction')"/></td>
+					<td><input type="button" value="完了" onClick="submitAction('BuyItemConfirmAction')"/></td>
 				</tr>
 			</s:form>
 		</div>	

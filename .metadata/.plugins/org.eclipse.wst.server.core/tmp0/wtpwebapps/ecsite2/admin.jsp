@@ -19,8 +19,12 @@ body{
 	letter-spacing;1px;
 	font-family:Verdana,Helvetica,sans-serif;
 	font-size:12px;
-	color:#333;
-	background:#fff;
+	background:#efefef;
+}
+
+h1
+{
+	color:black;
 }
 
 .loginbox input[type=submit]
@@ -42,17 +46,20 @@ body{
 }
 
 #top{
-	width:100%;
-	margin:30px auto;
-	background: #333;
-	color:#fff;
+	width:100px;
+	margin: 0 auto;
+	color:#000;
 	text-align:center;
+}
+
+#top h1{
+	border-bottom:1px solid black;	
 }
 
 #header{
 	width:100%;
 	height:80px;
-	background-color:black;
+	
 }
 
 #main{
@@ -64,13 +71,13 @@ body{
 #footer{
 	width:100%;
 	height:80px;
-	background-color:black;
+	
 	clear:both;
 }
 
 .loginbox{
 	width:600px;
-	background:gray;
+	background:lightgray;
 	height:200px;
 	position:relative;
 	margin:0 auto;
@@ -104,12 +111,13 @@ body{
 	text-align:center;
 	font-size:12px;
 	position:absolute;
-	top:60%;
+	top:50%;
 	right:45%;
-	color:gray;
+	color:black;
+	
 }
 
-.logout p:hover{
+.logout a:hover{
 	color:#ffc107;
 }
 

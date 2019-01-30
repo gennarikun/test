@@ -31,3 +31,5 @@ desc (テーブル名)；　でENTER押す。
 
 #Column 'oo' not found.が出てきた時
 sqlとDAOの'oo'が合っているか確認する。
+
+aocattleya/LeisurePass

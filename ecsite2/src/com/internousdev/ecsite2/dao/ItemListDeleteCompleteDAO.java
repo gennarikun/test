@@ -14,7 +14,7 @@ public class ItemListDeleteCompleteDAO {
 	
 	
 	public int deleteItemList() throws SQLException{
-		String sql="DELETE FROM item_into_transaction";
+		String sql="DELETE FROM item_info_transaction";
 		PreparedStatement preparedStatement;
 		int result=0;
 		try{

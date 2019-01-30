@@ -1,40 +1,50 @@
 package com.internousdev.ecsite2.dto;
 
 public class LoginDTO {
+
 	private String loginId;
 	private String loginPassword;
 	private String userName;
-	private boolean loginFlg=false;
-	
-	public String getLoginId(){
-		return loginId;
+	private boolean loginFlg;
+	private String adminFlg;
+
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
 	}
-	
-	public void setLoginId(String loginId){
-		this.loginId=loginId;
+
+	public String getLoginId() {
+		return this.loginId;
 	}
-	
-	public String getLoginPassword(){
-		return loginPassword;
+
+	public void setLoginPassword(String loginPassword) {
+		this.loginPassword = loginPassword;
 	}
-	
-	public void setLoginPassword(String loginPassword){
-		this.loginPassword=loginPassword;
+
+	public String getLoginPassword() {
+		return this.loginPassword;
 	}
-	
-	public String getUserName(){
-		return userName;
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
-	
-	public void setUserName(String userName){
-		this.userName=userName;
+
+	public String getUserName() {
+		return this.userName;
 	}
-	
-	public boolean getLoginFlg(){
-		return loginFlg;
+
+	public void setLoginFlg(boolean loginFlg) {
+		this.loginFlg = loginFlg;
 	}
-	
-	public void setLoginFlg(boolean loginFlg){
-		this.loginFlg=loginFlg;
+
+	public boolean getLoginFlg() {
+		return this.loginFlg;
+	}
+
+	public String getAdminFlg() {
+		return adminFlg;
+	}
+
+	public void setAdminFlg(String adminFlg) {
+		this.adminFlg = adminFlg;
 	}
 }

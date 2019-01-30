@@ -1,0 +1,5 @@
+package com.internousdev.ecsitesample.action;
+
+public class LoginUserBean {
+
+}

@@ -79,7 +79,7 @@ table{
 .btn-two{
 	position:absolute;
 	top:0;
-	right:0;
+	left:100px;
 }
 .btn-two:hover{
 	background-color:darkorange;
@@ -88,8 +88,8 @@ table{
 
 .btn-three{
 	position:absolute;
-	top:100px;
-	left:36%;
+	top:0;
+	left:220px;
 }
 
 .btn-three:hover{
