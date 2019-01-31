@@ -1,0 +1,12 @@
+package com.internousdev.webproj0.action;
+
+public class HelloStrutsAction {
+	private static final String SUCCESS = null;
+
+	public String execute(){
+		return SUCCESS;
+//		executeメソッドを実行すると
+//		struts2にSUCCESSを返せ、と書いてある。
+	}
+
+}

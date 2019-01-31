@@ -14,4 +14,10 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.mysql.jdbc.PreparedStatement"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dto.MPlaceDTO"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dto.MCategoryDTO"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dao.MCategoryDAO"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dao.MPlaceDAO"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dto.DestinationInfoDTO"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dao.DestinationInfoDAO"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,12 @@
+package com.internousdev.webproj0.action;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class HelloStrutsAction extends ActionSupport{
+	public String execute(){
+		return SUCCESS;
+//		executeメソッドを実行すると
+//		struts2にSUCCESSを返せ、と書いてある。
+	}
+
+}
